@@ -11,7 +11,8 @@
 | Ahmed Salah Mahmood      | 202010770  | 03      |
 | Hussain Salah Ghuloom    | 202103399  | 03      |
 
----
+## 📸 Output Example
+<img width="1346" alt="LocalHost Output" src="https://github.com/user-attachments/assets/13c77c00-ceef-4157-add2-4306e7c59893">
 
 ## 🚀 Features
 
@@ -25,5 +26,3 @@
 - **PHP**: For server-side data retrieval and processing.
 - **Pico CSS**: A minimal CSS framework that ensures a modern and clean design.
 - **HTML**: For structuring the content displayed to users.
-
----
