@@ -21,7 +21,7 @@ if ($result === null) {
 }
 ?>
 
-// Task 2: Data Visualization
+<!-- Task 2: Data Visualization -->
 
 <!DOCTYPE html>
 <html lang="en">
