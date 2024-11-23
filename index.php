@@ -5,7 +5,6 @@
 $url = 'https://data.gov.bh/api/explore/v2.1/catalog/datasets/01-statistics-of-students-nationalities_updated/records?where=colleges%20like%20%22IT%22%20AND%20the_programs%20like%20%22bachelor%22&limit=100';
 
 // Next, we use file_get_contents to grab the data from the API.
-// This function will return the content from the URL we specified.
 $response = file_get_contents($url);
 
 // We need to check if the response is false. If it is, it means something went wrong while fetching data.
@@ -20,10 +19,10 @@ $result = json_decode($response, true);
 if ($result === null) {
     die('Error decoding JSON'); // Stop the script and show an error message if decoding fails.
 }
+?>
 
 // Task 2: Data Visualization
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,6 +59,7 @@ if ($result === null) {
                 <tr>
                     <th>Year</th> <!-- Table header for the Year -->
                     <th>Semester</th> <!-- Table header for the Semester -->
+                    <th>The Programs</th> <!-- New header for The Programs -->
                     <th>Nationality</th> <!-- Table header for the Nationality -->
                     <th>College</th> <!-- Table header for the College -->
                     <th>Number of Students</th> <!-- Table header for the Number of Students -->
@@ -67,11 +67,12 @@ if ($result === null) {
             </thead>
             <tbody>
                 <?php
-                // here, we loop through each record in the results array to display the data
+                // Loop through each record in the results array to display the data
                 foreach ($result['results'] as $record) {
                     echo '<tr>';
                     echo '<td>' . htmlspecialchars($record['year']) . '</td>'; // Year
                     echo '<td>' . htmlspecialchars($record['semester']) . '</td>'; // Semester
+                    echo '<td>' . htmlspecialchars($record['the_programs']) . '</td>'; // The Programs
                     echo '<td>' . htmlspecialchars($record['nationality']) . '</td>'; // Nationality
                     echo '<td>' . htmlspecialchars($record['colleges']) . '</td>'; // College
                     echo '<td>' . htmlspecialchars($record['number_of_students']) . '</td>'; // Number of Students
