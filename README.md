@@ -6,15 +6,10 @@
 
 ### 👥 Personal Information
 
-#### Member 1
-- **Name**: Ahmed Salah Mahmood
-- **Student ID**: 202010770
-- **Section**: 03
-
-#### Member 2
-- **Name**: Hussain Salah Ghuloom
-- **Student ID**: 202103399
-- **Section**: 03
+| Name                     | Student ID | Section |
+|--------------------------|------------|---------|
+| Ahmed Salah Mahmood      | 202010770  | 03      |
+| Hussain Salah Ghuloom    | 202103399  | 03      |
 
 ---
 
@@ -30,3 +25,5 @@
 - **PHP**: For server-side data retrieval and processing.
 - **Pico CSS**: A minimal CSS framework that ensures a modern and clean design.
 - **HTML**: For structuring the content displayed to users.
+
+---
