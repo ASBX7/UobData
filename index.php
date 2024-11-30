@@ -47,6 +47,10 @@ if ($result === null) {
         tr:hover {
             background-color: #f1f1f1; /* Highlighting the row when a user hovers over it */
         }
+        .overflow-auto {
+            max-height: 235px;
+            overflow-y: auto;
+        }
     </style>
 </head>
 <body>
@@ -83,6 +87,5 @@ if ($result === null) {
         </table>
     </div>
 </div>
-
 </body>
 </html>
