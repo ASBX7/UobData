@@ -29,6 +29,7 @@ if ($result === null) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Statistics</title>
+    <!-- Here, we include Pico CSS for styling our table and page layout -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pico-css@latest/css/pico.min.css">
     <style>
         body {
@@ -57,7 +58,7 @@ if ($result === null) {
             border-bottom: 1px solid #ddd;
         }
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #f2f2f2; /* Striped rows */
         }
         tr:hover {
             background-color: #f1f1f1;
@@ -77,12 +78,12 @@ if ($result === null) {
         <table>
             <thead>
                 <tr>
-                    <th>Year</th>
-                    <th>Semester</th>
-                    <th>The Programs</th>
-                    <th>Nationality</th>
-                    <th>College</th>
-                    <th>Number of Students</th>
+                    <th>Year</th> <!-- Table header for the Year -->
+                    <th>Semester</th> <!-- Table header for the Semester -->
+                    <th>The Programs</th> <!-- New header for The Programs -->
+                    <th>Nationality</th> <!-- Table header for the Nationality -->
+                    <th>College</th> <!-- Table header for the College -->
+                    <th>Number of Students</th> <!-- Table header for the Number of Students -->
                 </tr>
             </thead>
             <tbody>
@@ -90,13 +91,13 @@ if ($result === null) {
                 // Loop through each record in the results array to display the data
                 foreach ($result['results'] as $record) {
                     echo '<tr>';
-                    echo '<td>' . htmlspecialchars($record['year']) . '</td>';
-                    echo '<td>' . htmlspecialchars($record['semester']) . '</td>';
-                    echo '<td>' . htmlspecialchars($record['the_programs']) . '</td>';
-                    echo '<td>' . htmlspecialchars($record['nationality']) . '</td>';
-                    echo '<td>' . htmlspecialchars($record['colleges']) . '</td>';
-                    echo '<td>' . htmlspecialchars($record['number_of_students']) . '</td>';
-                    echo '</tr>';
+                    echo '<td>' . htmlspecialchars($record['year']) . '</td>'; // Year
+                    echo '<td>' . htmlspecialchars($record['semester']) . '</td>'; // Semester
+                    echo '<td>' . htmlspecialchars($record['the_programs']) . '</td>'; // The Programs
+                    echo '<td>' . htmlspecialchars($record['nationality']) . '</td>'; // Nationality
+                    echo '<td>' . htmlspecialchars($record['colleges']) . '</td>'; // College
+                    echo '<td>' . htmlspecialchars($record['number_of_students']) . '</td>'; // Number of Students
+                    echo '</tr>'; // End the row
                 }
                 ?>
             </tbody>
