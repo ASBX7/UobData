@@ -32,20 +32,37 @@ if ($result === null) {
     <!-- Here, we include Pico CSS for styling our table and page layout -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pico-css@latest/css/pico.min.css">
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin: 30px 0;
+            background-color: #D3D3D3;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
         table {
-            width: 100%; /* We want the table to take up the full width of its container */
-            border-collapse: collapse; /* This removes the space between table borders */
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         th, td {
-            padding: 10px; /* Adding some padding for better spacing inside cells */
-            text-align: left; /* Aligning text to the left for easier reading */
-            border-bottom: 1px solid #ddd; /* Adding a light bottom border for separation between rows */
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
         }
-        th {
-            background-color: #f2f2f2; /* Setting a light gray background for the header row */
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Striped rows */
         }
         tr:hover {
-            background-color: #f1f1f1; /* Highlighting the row when a user hovers over it */
+            background-color: #f1f1f1;
+            cursor: pointer;
         }
         .overflow-auto {
             max-height: 235px;
@@ -56,11 +73,7 @@ if ($result === null) {
 <body>
 
 <div class="container">
-    <h1 style="text-align: center; font-family: 'Georgia', serif;
-        font-size: 3em; margin: 30px 0; color: #333; background-color: #D3D3D3; 
-        padding: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
-    Statistics of Students Enrolled in Bachelor Programs
-</h1> 
+    <h1> Statistics of Students Enrolled in Bachelor Programs </h1> 
     <div class="overflow-auto"> <!-- This div will help manage overflow if the table gets too wide -->
         <table>
             <thead>
