@@ -12,7 +12,7 @@
 | Hussain Salah Ghuloom    | 202103399  | 03      |
 
 ## 📸 Output Example
-<img width="1346" alt="LocalHost Output" src="https://github.com/user-attachments/assets/13c77c00-ceef-4157-add2-4306e7c59893">
+<img width="1448" alt="Screenshot 2024-11-30 at 1 23 35 PM" src="https://github.com/user-attachments/assets/5a459960-9135-49d6-bbf1-d144d240d9e8">
 
 ## 🚀 Features
 
