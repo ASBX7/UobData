@@ -65,7 +65,7 @@ if ($result === null) {
             cursor: pointer;
         }
         .overflow-auto {
-            max-height: 235px;
+            max-height: 275px;
             overflow-y: auto;
         }
     </style>
