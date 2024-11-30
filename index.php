@@ -56,7 +56,11 @@ if ($result === null) {
 <body>
 
 <div class="container">
-    <h1>Statistics of Students Enrolled in Bachelor Programs</h1>
+    <h1 style="text-align: center; font-family: 'Georgia', serif;
+        font-size: 3em; margin: 30px 0; color: #333; background-color: #D3D3D3; 
+        padding: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+    Statistics of Students Enrolled in Bachelor Programs
+</h1> 
     <div class="overflow-auto"> <!-- This div will help manage overflow if the table gets too wide -->
         <table>
             <thead>
