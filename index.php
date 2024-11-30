@@ -1,23 +1,23 @@
 <?php
 // Task 1: Data Retrieval
 
-// First, we define the API endpoint URL where we can fetch data about students
+// Define the API endpoint URL to fetch student data
 $url = 'https://data.gov.bh/api/explore/v2.1/catalog/datasets/01-statistics-of-students-nationalities_updated/records?where=colleges%20like%20%22IT%22%20AND%20the_programs%20like%20%22bachelor%22&limit=100';
 
-// Next, we use file_get_contents to grab the data from the API.
+// Use file_get_contents to fetch data from the API
 $response = file_get_contents($url);
 
-// We need to check if the response is false. If it is, it means something went wrong while fetching data.
+// Check if the response is false, indicating an error in fetching data
 if ($response === false) {
-    die('Error fetching data from API'); // Stop the script and show an error message.
+    die('Error fetching data from API');
 }
 
-// Now, we take that JSON response and convert it into a PHP associative array.
-// This makes it easier to work with the data in our script.
+// Decode the JSON response into a PHP associative array for easier data manipulation
 $result = json_decode($response, true);
 
+// Check if JSON decoding failed; if so, stop the script and show an error
 if ($result === null) {
-    die('Error decoding JSON'); // Stop the script and show an error message if decoding fails.
+    die('Error decoding JSON');
 }
 ?>
 
@@ -29,14 +29,15 @@ if ($result === null) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Statistics</title>
-    <!-- Here, we include Pico CSS for styling our table and page layout -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pico-css@latest/css/pico.min.css">
     <style>
+        /* Basic styling for the body */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f9f9f9;
             color: #333;
         }
+        /* Styling for the main heading */
         h1 {
             text-align: center;
             font-size: 2.5em;
@@ -46,26 +47,31 @@ if ($result === null) {
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
+        /* Table styling */
         table {
             width: 100%;
             margin: 20px 0;
             border-collapse: collapse;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+        /* Styling for table headers and cells */
         th, td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
+        /* Alternate row coloring for better readability */
         tr:nth-child(even) {
-            background-color: #f2f2f2; /* Striped rows */
+            background-color: #f2f2f2;
         }
+        /* Hover effect for table rows */
         tr:hover {
             background-color: #f1f1f1;
             cursor: pointer;
         }
+        /* Class to manage overflow in the table container */
         .overflow-auto {
-            max-height: 275px;
+            max-height: 279px;
             overflow-y: auto;
         }
     </style>
@@ -74,16 +80,16 @@ if ($result === null) {
 
 <div class="container">
     <h1> Statistics of Students Enrolled in Bachelor Programs </h1> 
-    <div class="overflow-auto"> <!-- This div will help manage overflow if the table gets too wide -->
+    <div class="overflow-auto"> <!-- Container for the table with overflow handling -->
         <table>
             <thead>
                 <tr>
-                    <th>Year</th> <!-- Table header for the Year -->
-                    <th>Semester</th> <!-- Table header for the Semester -->
-                    <th>The Programs</th> <!-- New header for The Programs -->
-                    <th>Nationality</th> <!-- Table header for the Nationality -->
-                    <th>College</th> <!-- Table header for the College -->
-                    <th>Number of Students</th> <!-- Table header for the Number of Students -->
+                    <th>Year</th>
+                    <th>Semester</th>
+                    <th>The Programs</th>
+                    <th>Nationality</th>
+                    <th>College</th>
+                    <th>Number of Students</th>
                 </tr>
             </thead>
             <tbody>
@@ -91,13 +97,13 @@ if ($result === null) {
                 // Loop through each record in the results array to display the data
                 foreach ($result['results'] as $record) {
                     echo '<tr>';
-                    echo '<td>' . htmlspecialchars($record['year']) . '</td>'; // Year
-                    echo '<td>' . htmlspecialchars($record['semester']) . '</td>'; // Semester
-                    echo '<td>' . htmlspecialchars($record['the_programs']) . '</td>'; // The Programs
-                    echo '<td>' . htmlspecialchars($record['nationality']) . '</td>'; // Nationality
-                    echo '<td>' . htmlspecialchars($record['colleges']) . '</td>'; // College
-                    echo '<td>' . htmlspecialchars($record['number_of_students']) . '</td>'; // Number of Students
-                    echo '</tr>'; // End the row
+                    echo '<td>' . htmlspecialchars($record['year']) . '</td>';
+                    echo '<td>' . htmlspecialchars($record['semester']) . '</td>';
+                    echo '<td>' . htmlspecialchars($record['the_programs']) . '</td>';
+                    echo '<td>' . htmlspecialchars($record['nationality']) . '</td>';
+                    echo '<td>' . htmlspecialchars($record['colleges']) . '</td>';
+                    echo '<td>' . htmlspecialchars($record['number_of_students']) . '</td>';
+                    echo '</tr>';
                 }
                 ?>
             </tbody>
